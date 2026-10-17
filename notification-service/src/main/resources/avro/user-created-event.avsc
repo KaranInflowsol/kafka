@@ -10,13 +10,13 @@
     },
     {
       "name": "fullName",
-      "type": "string",
-      "default": ""
+      "type": ["null", "string"],
+      "default": null
     },
     {
       "name": "email",
-      "type": "string",
-      "default": ""
+      "type": ["null", "string"],
+      "default": null
     }
   ]
 }

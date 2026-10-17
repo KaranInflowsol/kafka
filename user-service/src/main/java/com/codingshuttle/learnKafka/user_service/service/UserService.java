@@ -27,6 +27,8 @@ public class UserService {
         User user = modelMapper.map(createUserRequestDto, User.class);
         User savedUser = userRepository.save(user);
 
+
+
         UserCreatedEvent userCreatedEvent = modelMapper.map(savedUser, UserCreatedEvent.class);
         kafkaTemplate.send(KAFKA_USER_CREATED_TOPIC, userCreatedEvent.getId(), userCreatedEvent);
 
